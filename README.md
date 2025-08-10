@@ -313,4 +313,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Built with ❤️ using FastAPI, Kubernetes, and modern web technologies.**
+**Built with using FastAPI, Kubernetes, and modern web technologies.**
