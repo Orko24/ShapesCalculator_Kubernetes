@@ -1,0 +1,12 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: shapes-calculator-pdb
+  namespace: shapes-calculator
+  labels:
+    app: shapes-calculator
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: shapes-calculator

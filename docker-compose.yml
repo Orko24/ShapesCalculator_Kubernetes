@@ -1,0 +1,52 @@
+# Docker Compose for local development
+# Note: 'version' field is optional in modern Docker Compose
+
+services:
+  shapes-calculator:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: shapes-calculator-app
+    ports:
+      - "8000:8000"
+    environment:
+      - FRONTEND_PATH=/app/frontend
+      - PYTHONPATH=/app
+    volumes:
+      # Mount source code for development (optional - comment out for production)
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - shapes-network
+
+  # Optional: Add nginx for production-like setup
+  nginx:
+    image: nginx:alpine
+    container_name: shapes-calculator-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - shapes-calculator
+    restart: unless-stopped
+    networks:
+      - shapes-network
+    profiles:
+      - production
+
+networks:
+  shapes-network:
+    driver: bridge
+
+# Uncomment for persistent data storage if needed in the future
+# volumes:
+#   shapes_data:

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shapes-calculator-config
+  namespace: shapes-calculator
+  labels:
+    app: shapes-calculator
+data:
+  FRONTEND_PATH: "/app/frontend"
+  PYTHONPATH: "/app"
+  HOST: "0.0.0.0"
+  PORT: "8000"

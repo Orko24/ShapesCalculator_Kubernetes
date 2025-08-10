@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .back-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 116, 139, 0.3);
+        }
+
+        .page-title {
+            font-size: 2.5em;
+            color: #1e293b;
+            margin: 0;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .spacer {
+            width: 100px;
+        }
+
+        .triangle-visualization {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .triangle-svg {
+            width: 220px;
+            height: 180px;
+            margin: 0 auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .triangle-element {
+            fill: none;
+            stroke: #fcb69f;
+            stroke-width: 4;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawTriangle 2s ease-out forwards;
+        }
+
+        @keyframes drawTriangle {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .input-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+            margin-bottom: 30px;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.2em;
+            letter-spacing: 0.025em;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 20px 24px;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+            font-weight: 500;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #fcb69f;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(252, 182, 159, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .unit-label {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-weight: 600;
+            pointer-events: none;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #1e293b;
+            border: none;
+            border-radius: 16px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px rgba(252, 182, 159, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculate-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .calculate-btn:hover::before {
+            left: 100%;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(252, 182, 159, 0.4);
+        }
+
+        .calculate-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .calculate-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .formula-info {
+            background: linear-gradient(135deg, #fef7f0 0%, #fef3ec 100%);
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #9a3412;
+        }
+
+        .results {
+            padding: 30px;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.8;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .results.default {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #64748b;
+            border-color: #e2e8f0;
+        }
+
+        .results.success {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            border-color: #86efac;
+            color: #166534;
+            animation: resultFadeIn 0.5s ease-out;
+        }
+
+        .results.error {
+            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+            border-color: #fca5a5;
+            color: #dc2626;
+            animation: shake 0.5s ease-out;
+        }
+
+        .results.loading {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-color: #facc15;
+            color: #a16207;
+        }
+
+        @keyframes resultFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .result-values {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .result-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #fcb69f;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            .nav-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .page-title {
+                font-size: 2em;
+            }
+
+            .spacer {
+                display: none;
+            }
+
+            .input-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <a href="/" class="back-btn">← Back to Home</a>
+            <h1 class="page-title">🔺 Triangle Calculator</h1>
+            <div class="spacer"></div>
+        </div>
+
+        <div class="triangle-visualization">
+            <svg class="triangle-svg" viewBox="0 0 220 180">
+                <polygon class="triangle-element" points="110,20 40,140 180,140" />
+                <text x="110" y="90" text-anchor="middle" fill="#64748b" font-size="14" font-weight="600">Area</text>
+                <line x1="40" y1="150" x2="180" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <text x="110" y="165" text-anchor="middle" fill="#64748b" font-size="12" font-weight="600">Base</text>
+                <line x1="25" y1="20" x2="25" y2="140" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <text x="15" y="80" text-anchor="middle" fill="#64748b" font-size="12" font-weight="600" transform="rotate(-90, 15, 80)">Height</text>
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="input-section">
+            <div class="formula-info">
+                <strong>📐 Formula:</strong> Triangle Area = (Base × Height) ÷ 2
+            </div>
+
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="triangleBase">Base:</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="triangleBase" placeholder="Enter base" step="0.01" min="0">
+                        <span class="unit-label">units</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="triangleHeight">Height:</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="triangleHeight" placeholder="Enter height" step="0.01" min="0">
+                        <span class="unit-label">units</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="calculate-btn" id="calculateBtn" onclick="calculateTriangle()">
+                Calculate Triangle Area
+            </button>
+        </div>
+
+        <div class="results default" id="triangleResults">
+            <strong>📊 Results</strong><br>
+            Enter base and height values and click calculate to see the area calculation.
+        </div>
+    </div>
+
+    <script>
+        let apiBaseUrl = localStorage.getItem('apiBaseUrl') || 'http://localhost:30000';
+        let isCalculating = false;
+
+        // DOM Elements
+        const baseInput = document.getElementById('triangleBase');
+        const heightInput = document.getElementById('triangleHeight');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultsDiv = document.getElementById('triangleResults');
+
+        // Initialize
+        function initialize() {
+            setupEventListeners();
+            baseInput.focus();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            baseInput.addEventListener('keypress', handleKeyPress);
+            heightInput.addEventListener('keypress', handleKeyPress);
+            baseInput.addEventListener('input', handleInputChange);
+            heightInput.addEventListener('input', handleInputChange);
+        }
+
+        // Handle input changes
+        function handleInputChange() {
+            const base = parseFloat(baseInput.value);
+            const height = parseFloat(heightInput.value);
+
+            if (base > 0 && height > 0) {
+                calculateBtn.disabled = false;
+                calculateBtn.style.opacity = '1';
+            } else {
+                calculateBtn.disabled = true;
+                calculateBtn.style.opacity = '0.6';
+            }
+        }
+
+        // Handle Enter key press
+        function handleKeyPress(e) {
+            if (e.key === 'Enter' && !isCalculating) {
+                calculateTriangle();
+            }
+        }
+
+        // Update results display
+        function updateResults(type, content) {
+            resultsDiv.className = `results ${type}`;
+            resultsDiv.innerHTML = content;
+        }
+
+        // Generic API call function
+        async function makeApiCall(endpoint, data) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+            try {
+                const response = await fetch(`${apiBaseUrl}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.detail || `HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                return await response.json();
+            } catch (error) {
+                clearTimeout(timeoutId);
+                if (error.name === 'AbortError') {
+                    throw new Error('Request timeout - API may be unavailable');
+                }
+                throw error;
+            }
+        }
+
+        // Triangle calculation
+        async function calculateTriangle() {
+            if (isCalculating) return;
+
+            const base = parseFloat(baseInput.value);
+            const height = parseFloat(heightInput.value);
+
+            // Validation
+            if (!base || !height || base <= 0 || height <= 0) {
+                updateResults('error', `
+                    <strong>❌ Invalid Input</strong><br>
+                    Please enter valid positive values for both base and height.
+                `);
+                if (!base || base <= 0) baseInput.focus();
+                else heightInput.focus();
+                return;
+            }
+
+            // Start calculation
+            isCalculating = true;
+            calculateBtn.disabled = true;
+
+            updateResults('loading', `
+                <div class="loading-spinner"></div>
+                <strong>🔄 Calculating...</strong><br>
+                Processing triangle area calculation for base: ${base}, height: ${height}
+            `);
+
+            try {
+                const result = await makeApiCall('/triangle', {
+                    base: base,
+                    height: height
+                });
+
+                // Calculate some additional info for display
+                const manualCalculation = (base * height) / 2;
+
+                // Success
+                updateResults('success', `
+                    <strong>✅ Triangle Area Calculated!</strong><br>
+                    <em>Base: ${base} units, Height: ${height} units</em><br>
+                    <small>Formula: (${base} × ${height}) ÷ 2 = ${manualCalculation.toFixed(4)}</small>
+                    <div class="result-values">
+                        <div class="result-item">
+                            <div class="result-label">📐 Triangle Area</div>
+                            <div class="result-value">${result.area?.toFixed(4) || 'N/A'}</div>
+                            <div class="result-label">square units</div>
+                        </div>
+                    </div>
+                `);
+
+            } catch (error) {
+                updateResults('error', `
+                    <strong>❌ Calculation Failed</strong><br>
+                    <em>Error:</em> ${error.message}<br><br>
+                    Please check your API connection and try again.
+                `);
+            } finally {
+                isCalculating = false;
+                calculateBtn.disabled = false;
+                handleInputChange();
+            }
+        }
+
+        // Initialize when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initialize);
+        } else {
+            initialize();
+        }
+    </script>
+</body>
+</html>
