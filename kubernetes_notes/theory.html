@@ -1,0 +1,1614 @@
+<!DOCTYPE html><html><head>
+      <title>theory</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\heman\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="complete-kubernetes-theory-guide---from-zero-to-expert">Complete Kubernetes Theory Guide - From Zero to Expert </h1>
+<h2 id="table-of-contents">Table of Contents </h2>
+<ol>
+<li><a href="#what-is-kubernetes">What is Kubernetes and Why Does it Exist?</a></li>
+<li><a href="#core-architecture">Core Architecture &amp; Components</a></li>
+<li><a href="#pods">The Pod: Basic Unit of Deployment</a></li>
+<li><a href="#controllers">Controllers: Managing Application State</a></li>
+<li><a href="#services-networking">Services &amp; Networking</a></li>
+<li><a href="#storage">Storage &amp; Persistence</a></li>
+<li><a href="#configuration">Configuration Management</a></li>
+<li><a href="#security">Security Model</a></li>
+<li><a href="#scaling">Scaling &amp; Resource Management</a></li>
+<li><a href="#advanced-concepts">Advanced Concepts</a></li>
+<li><a href="#production">Production Considerations</a></li>
+<li><a href="#interview-prep">Interview Questions &amp; Scenarios</a></li>
+</ol>
+<hr>
+<h2 id="what-is-kubernetes">What is Kubernetes and Why Does it Exist? </h2>
+<h3 id="the-problem-kubernetes-solves">The Problem Kubernetes Solves </h3>
+<p><strong>Before containerization:</strong></p>
+<ul>
+<li>Applications ran directly on servers</li>
+<li>"Works on my machine" problems</li>
+<li>Difficult to scale and manage dependencies</li>
+<li>Resource waste (servers running at 10-20% utilization)</li>
+</ul>
+<p><strong>With containers (Docker era):</strong></p>
+<ul>
+<li>Consistent packaging and deployment</li>
+<li>Better resource utilization</li>
+<li>Still needed orchestration at scale</li>
+</ul>
+<p><strong>The orchestration challenge:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Managing containers manually becomes impossible at scale</span>
+<span class="token function">docker</span> run app1 on server1
+<span class="token function">docker</span> run app1 on server2  
+<span class="token function">docker</span> run app2 on server3
+<span class="token comment"># What if server2 dies? How do you load balance? Auto-scale?</span>
+</code></pre><h3 id="what-kubernetes-actually-is">What Kubernetes Actually Is </h3>
+<p><strong>Definition:</strong> Kubernetes is a <strong>container orchestration platform</strong> that automates the deployment, scaling, and management of containerized applications.</p>
+<p><strong>Key insight:</strong> Kubernetes is a <strong>desired state management system</strong></p>
+<ul>
+<li>You declare what you want (5 replicas of your app)</li>
+<li>Kubernetes continuously ensures that state is maintained</li>
+<li>If reality differs from desired state, Kubernetes takes action to fix it</li>
+</ul>
+<h3 id="the-declarative-model">The Declarative Model </h3>
+<p><strong>Imperative (traditional):</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Step-by-step commands</span>
+<span class="token function">ssh</span> server1
+<span class="token function">docker</span> stop old-app
+<span class="token function">docker</span> run new-app
+<span class="token function">ssh</span> server2
+<span class="token function">docker</span> stop old-app
+<span class="token function">docker</span> run new-app
+</code></pre><p><strong>Declarative (Kubernetes):</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Describe desired end state</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app<span class="token punctuation">:</span>v2  <span class="token comment"># Just change this</span>
+</code></pre><p><strong>Benefits of declarative:</strong></p>
+<ul>
+<li><strong>Idempotent:</strong> Apply same config multiple times = same result</li>
+<li><strong>Self-healing:</strong> System automatically corrects drift</li>
+<li><strong>Version controlled:</strong> Infrastructure as Code</li>
+<li><strong>Predictable:</strong> Same config = same outcome everywhere</li>
+</ul>
+<hr>
+<h2 id="core-architecture">Core Architecture &amp; Components </h2>
+<h3 id="master-node-control-plane">Master Node (Control Plane) </h3>
+<p>The "brain" of the cluster that makes all decisions:</p>
+<p><strong>1. API Server (<code>kube-apiserver</code>)</strong></p>
+<ul>
+<li>RESTful API that serves as the front-end</li>
+<li>All communication goes through the API server</li>
+<li>Validates and persists configuration</li>
+<li>Only component that talks to etcd</li>
+</ul>
+<p><strong>2. etcd</strong></p>
+<ul>
+<li>Distributed key-value store</li>
+<li>Single source of truth for cluster state</li>
+<li>Stores all configuration, secrets, and current state</li>
+<li>Uses Raft consensus algorithm for consistency</li>
+</ul>
+<p><strong>3. Scheduler (<code>kube-scheduler</code>)</strong></p>
+<ul>
+<li>Decides which node should run each pod</li>
+<li>Considers resource requirements, constraints, policies</li>
+<li><strong>Scheduling factors:</strong>
+<ul>
+<li>Resource availability (CPU, memory)</li>
+<li>Node selectors and affinity rules</li>
+<li>Taints and tolerations</li>
+<li>Data locality</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Controller Manager (<code>kube-controller-manager</code>)</strong></p>
+<ul>
+<li>Runs multiple controllers that regulate cluster state</li>
+<li><strong>Key controllers:</strong>
+<ul>
+<li><strong>Deployment Controller:</strong> Manages ReplicaSets</li>
+<li><strong>ReplicaSet Controller:</strong> Ensures pod replicas</li>
+<li><strong>Node Controller:</strong> Monitors node health</li>
+<li><strong>Service Controller:</strong> Creates load balancers</li>
+</ul>
+</li>
+</ul>
+<h3 id="worker-nodes">Worker Nodes </h3>
+<p>Where your applications actually run:</p>
+<p><strong>1. kubelet</strong></p>
+<ul>
+<li>Node agent that communicates with API server</li>
+<li>Manages pod lifecycle on the node</li>
+<li>Reports node and pod status back to control plane</li>
+<li>Pulls container images and starts/stops containers</li>
+</ul>
+<p><strong>2. kube-proxy</strong></p>
+<ul>
+<li>Network proxy that implements Kubernetes Service concept</li>
+<li>Maintains network rules for pod-to-pod communication</li>
+<li>Implements load balancing for Services</li>
+<li><strong>Modes:</strong> iptables (default), IPVS, userspace</li>
+</ul>
+<p><strong>3. Container Runtime</strong></p>
+<ul>
+<li>Actually runs containers (Docker, containerd, CRI-O)</li>
+<li>Manages container images and lifecycle</li>
+<li>Implements Container Runtime Interface (CRI)</li>
+</ul>
+<h3 id="the-control-loop-pattern">The Control Loop Pattern </h3>
+<p><strong>Core concept:</strong> Everything in Kubernetes follows this pattern:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1. OBSERVE current state
+2. COMPARE with desired state  
+3. ACT to reconcile differences
+4. REPEAT continuously
+</code></pre><p><strong>Example - Deployment Controller:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Desired state: 3 replicas</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+
+<span class="token comment"># Current state: 2 pods running (1 crashed)</span>
+<span class="token comment"># Action: Create 1 new pod</span>
+<span class="token comment"># Result: 3 pods running = desired state achieved</span>
+</code></pre><hr>
+<h2 id="pods">The Pod: Basic Unit of Deployment </h2>
+<h3 id="what-is-a-pod">What is a Pod? </h3>
+<p><strong>Definition:</strong> A pod is the smallest deployable unit in Kubernetes, containing one or more containers that share:</p>
+<ul>
+<li>Network namespace (same IP address)</li>
+<li>Storage volumes</li>
+<li>Lifecycle (created/destroyed together)</li>
+</ul>
+<h3 id="why-pods-not-just-containers">Why Pods, Not Just Containers? </h3>
+<p><strong>Multi-container patterns:</strong></p>
+<p><strong>1. Sidecar Pattern</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Main app + logging sidecar</span>
+<span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>app
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> log<span class="token punctuation">-</span>shipper
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> fluentd
+  <span class="token comment"># Shares volumes with web-app to access logs</span>
+</code></pre><p><strong>2. Ambassador Pattern</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Main app + proxy sidecar</span>
+<span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> proxy
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>proxy
+  <span class="token comment"># Handles SSL termination, load balancing</span>
+</code></pre><p><strong>3. Adapter Pattern</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Main app + format adapter</span>
+<span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> legacy<span class="token punctuation">-</span>app
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> adapter
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> metrics<span class="token punctuation">-</span>adapter
+  <span class="token comment"># Converts legacy metrics to Prometheus format</span>
+</code></pre><h3 id="pod-networking">Pod Networking </h3>
+<p><strong>Key concepts:</strong></p>
+<ul>
+<li>Each pod gets a unique IP address</li>
+<li>Containers in a pod communicate via <code>localhost</code></li>
+<li>Pods communicate directly using pod IPs</li>
+<li>No NAT between pods (flat network)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Pod A (IP: 10.244.1.10)</span>
+<span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cache
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+
+<span class="token comment"># Web container connects to cache: localhost:6379</span>
+<span class="token comment"># Other pods connect to web: 10.244.1.10:8080</span>
+</code></pre><h3 id="pod-lifecycle">Pod Lifecycle </h3>
+<p><strong>Phases:</strong></p>
+<ol>
+<li><strong>Pending:</strong> Pod accepted but not yet running</li>
+<li><strong>Running:</strong> At least one container is running</li>
+<li><strong>Succeeded:</strong> All containers terminated successfully</li>
+<li><strong>Failed:</strong> At least one container failed</li>
+<li><strong>Unknown:</strong> Cannot determine pod status</li>
+</ol>
+<p><strong>Container states:</strong></p>
+<ul>
+<li><strong>Waiting:</strong> Not running (pulling image, waiting for secrets)</li>
+<li><strong>Running:</strong> Executing normally</li>
+<li><strong>Terminated:</strong> Finished execution (success or failure)</li>
+</ul>
+<h3 id="init-containers">Init Containers </h3>
+<p><strong>Purpose:</strong> Run before main containers to perform setup tasks</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">initContainers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> migration
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> migrate<span class="token punctuation">-</span>tool
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'migrate'</span><span class="token punctuation">,</span> <span class="token string">'database'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> permission<span class="token punctuation">-</span>fix
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> busybox
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'chmod'</span><span class="token punctuation">,</span> <span class="token string">'777'</span><span class="token punctuation">,</span> <span class="token string">'/shared-volume'</span><span class="token punctuation">]</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+    <span class="token comment"># Starts only after init containers complete</span>
+</code></pre><p><strong>Use cases:</strong></p>
+<ul>
+<li>Database migrations</li>
+<li>Configuration setup</li>
+<li>Waiting for dependencies</li>
+<li>Security setup</li>
+</ul>
+<hr>
+<h2 id="controllers">Controllers: Managing Application State </h2>
+<h3 id="replicaset">ReplicaSet </h3>
+<p><strong>Purpose:</strong> Ensures a specified number of pod replicas are running</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ReplicaSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> frontend
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> frontend
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> frontend
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+</code></pre><p><strong>How it works:</strong></p>
+<ol>
+<li>Continuously monitors pods matching selector</li>
+<li>If fewer pods than desired: creates new pods</li>
+<li>If more pods than desired: deletes excess pods</li>
+<li>Uses pod template to create new pods</li>
+</ol>
+<h3 id="deployment">Deployment </h3>
+<p><strong>Purpose:</strong> Provides declarative updates for ReplicaSets and Pods</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>deployment
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> RollingUpdate
+    <span class="token key atrule">rollingUpdate</span><span class="token punctuation">:</span>
+      <span class="token key atrule">maxUnavailable</span><span class="token punctuation">:</span> <span class="token number">1</span>
+      <span class="token key atrule">maxSurge</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span><span class="token number">1.20</span>
+</code></pre><p><strong>Deployment strategies:</strong></p>
+<p><strong>1. Rolling Update (default)</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> RollingUpdate
+  <span class="token key atrule">rollingUpdate</span><span class="token punctuation">:</span>
+    <span class="token key atrule">maxUnavailable</span><span class="token punctuation">:</span> 25%  <span class="token comment"># Max pods that can be unavailable</span>
+    <span class="token key atrule">maxSurge</span><span class="token punctuation">:</span> 25%        <span class="token comment"># Max extra pods during update</span>
+</code></pre><ul>
+<li><strong>Process:</strong> Gradually replace old pods with new ones</li>
+<li><strong>Benefit:</strong> Zero downtime</li>
+<li><strong>Use case:</strong> Most applications</li>
+</ul>
+<p><strong>2. Recreate</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> Recreate
+</code></pre><ul>
+<li><strong>Process:</strong> Kill all old pods, then create new ones</li>
+<li><strong>Benefit:</strong> Simple, no resource overhead</li>
+<li><strong>Use case:</strong> Applications that can't run multiple versions</li>
+</ul>
+<h3 id="statefulset">StatefulSet </h3>
+<p><strong>Purpose:</strong> For stateful applications that need:</p>
+<ul>
+<li>Stable network identities</li>
+<li>Ordered deployment and scaling</li>
+<li>Persistent storage</li>
+</ul>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StatefulSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> database
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> database
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> postgres
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span><span class="token number">13</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/lib/postgresql/data
+  <span class="token key atrule">volumeClaimTemplates</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">accessModes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"ReadWriteOnce"</span><span class="token punctuation">]</span>
+      <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+        <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+          <span class="token key atrule">storage</span><span class="token punctuation">:</span> 10Gi
+</code></pre><p><strong>Key differences from Deployment:</strong></p>
+<ul>
+<li><strong>Stable hostnames:</strong> <code>database-0</code>, <code>database-1</code>, <code>database-2</code></li>
+<li><strong>Ordered operations:</strong> Pods created/deleted in sequence</li>
+<li><strong>Persistent storage:</strong> Each pod gets its own persistent volume</li>
+<li><strong>Network identity:</strong> Stable DNS names</li>
+</ul>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li>Databases (MySQL, PostgreSQL, MongoDB)</li>
+<li>Message queues (Kafka, RabbitMQ)</li>
+<li>Distributed systems (Elasticsearch, Cassandra)</li>
+</ul>
+<h3 id="daemonset">DaemonSet </h3>
+<p><strong>Purpose:</strong> Ensures a pod runs on every (or selected) node</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> DaemonSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> logging<span class="token punctuation">-</span>agent
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> logging<span class="token punctuation">-</span>agent
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> logging<span class="token punctuation">-</span>agent
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">:</span>latest
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> host<span class="token punctuation">-</span>logs
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/log
+          <span class="token key atrule">readOnly</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> host<span class="token punctuation">-</span>logs
+        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> /var/log
+</code></pre><p><strong>Use cases:</strong></p>
+<ul>
+<li>Log collection agents</li>
+<li>Monitoring agents (node-exporter)</li>
+<li>Network plugins</li>
+<li>Storage daemons</li>
+</ul>
+<h3 id="job-and-cronjob">Job and CronJob </h3>
+<p><strong>Job:</strong> Runs pods to completion for batch workloads</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> batch/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Job
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> data<span class="token punctuation">-</span>migration
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">completions</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">parallelism</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> migrator
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> migration<span class="token punctuation">-</span>tool
+        <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"migrate"</span><span class="token punctuation">,</span> <span class="token string">"--all"</span><span class="token punctuation">]</span>
+      <span class="token key atrule">restartPolicy</span><span class="token punctuation">:</span> Never
+</code></pre><p><strong>CronJob:</strong> Runs jobs on a schedule</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> batch/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> CronJob
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> backup
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">schedule</span><span class="token punctuation">:</span> <span class="token string">"0 2 * * *"</span>  <span class="token comment"># Daily at 2 AM</span>
+  <span class="token key atrule">jobTemplate</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">template</span><span class="token punctuation">:</span>
+        <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+          <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> backup
+            <span class="token key atrule">image</span><span class="token punctuation">:</span> backup<span class="token punctuation">-</span>tool
+            <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"backup"</span><span class="token punctuation">,</span> <span class="token string">"database"</span><span class="token punctuation">]</span>
+          <span class="token key atrule">restartPolicy</span><span class="token punctuation">:</span> OnFailure
+</code></pre><hr>
+<h2 id="services-networking">Services &amp; Networking </h2>
+<h3 id="the-service-abstraction">The Service Abstraction </h3>
+<p><strong>Problem:</strong> Pods are ephemeral (die and get recreated with new IPs)<br>
+<strong>Solution:</strong> Services provide stable network endpoints</p>
+<h3 id="service-types">Service Types </h3>
+<p><strong>1. ClusterIP (default)</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> backend
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> ClusterIP
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+</code></pre><ul>
+<li><strong>Scope:</strong> Internal cluster communication only</li>
+<li><strong>Use case:</strong> Microservice communication</li>
+<li><strong>Access:</strong> <code>backend.namespace.svc.cluster.local</code></li>
+</ul>
+<p><strong>2. NodePort</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> frontend
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> frontend
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+    <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">30080</span>
+</code></pre><ul>
+<li><strong>Scope:</strong> External access via node IP:port</li>
+<li><strong>Port range:</strong> 30000-32767</li>
+<li><strong>Use case:</strong> Development, simple external access</li>
+</ul>
+<p><strong>3. LoadBalancer</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>app
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> LoadBalancer
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>app
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+</code></pre><ul>
+<li><strong>Scope:</strong> Cloud provider creates external load balancer</li>
+<li><strong>Use case:</strong> Production external access</li>
+<li><strong>Cost:</strong> Each service = separate load balancer</li>
+</ul>
+<p><strong>4. ExternalName</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> external<span class="token punctuation">-</span>db
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> ExternalName
+  <span class="token key atrule">externalName</span><span class="token punctuation">:</span> db.example.com
+</code></pre><ul>
+<li><strong>Purpose:</strong> Alias for external service</li>
+<li><strong>Use case:</strong> Migrate external dependencies into cluster</li>
+</ul>
+<h3 id="how-services-work">How Services Work </h3>
+<p><strong>Service discovery process:</strong></p>
+<ol>
+<li><strong>Label selector</strong> finds matching pods</li>
+<li><strong>Endpoints</strong> object lists pod IPs</li>
+<li><strong>kube-proxy</strong> updates routing rules</li>
+<li><strong>DNS</strong> creates service records</li>
+</ol>
+<p><strong>Load balancing:</strong></p>
+<ul>
+<li><strong>Algorithm:</strong> Round-robin (default)</li>
+<li><strong>Session affinity:</strong> Route same client to same pod</li>
+<li><strong>Topology aware:</strong> Prefer local zone pods</li>
+</ul>
+<h3 id="ingress">Ingress </h3>
+<p><strong>Purpose:</strong> HTTP/HTTPS routing to services</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>ingress
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nginx.ingress.kubernetes.io/rewrite-target</span><span class="token punctuation">:</span> /
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> api.example.com
+    <span class="token key atrule">http</span><span class="token punctuation">:</span>
+      <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /users
+        <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service
+            <span class="token key atrule">port</span><span class="token punctuation">:</span>
+              <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /orders
+        <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> order<span class="token punctuation">-</span>service
+            <span class="token key atrule">port</span><span class="token punctuation">:</span>
+              <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">80</span>
+</code></pre><p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Cost effective:</strong> One load balancer for multiple services</li>
+<li><strong>SSL termination:</strong> Handle certificates centrally</li>
+<li><strong>Advanced routing:</strong> Path-based, host-based, header-based</li>
+<li><strong>Middleware:</strong> Authentication, rate limiting, caching</li>
+</ul>
+<p><strong>Ingress Controllers:</strong></p>
+<ul>
+<li><strong>nginx-ingress:</strong> Most popular, feature-rich</li>
+<li><strong>traefik:</strong> Auto-discovery, Let's Encrypt integration</li>
+<li><strong>istio:</strong> Service mesh with advanced features</li>
+<li><strong>kong:</strong> API gateway features</li>
+</ul>
+<h3 id="network-policies">Network Policies </h3>
+<p><strong>Purpose:</strong> Control traffic between pods (firewall rules)</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> NetworkPolicy
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> deny<span class="token punctuation">-</span>all
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">podSelector</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token key atrule">policyTypes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Ingress
+  <span class="token punctuation">-</span> Egress
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> NetworkPolicy
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> allow<span class="token punctuation">-</span>frontend<span class="token punctuation">-</span>to<span class="token punctuation">-</span>backend
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">podSelector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">policyTypes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Ingress
+  <span class="token key atrule">ingress</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">from</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">podSelector</span><span class="token punctuation">:</span>
+        <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+          <span class="token key atrule">app</span><span class="token punctuation">:</span> frontend
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+</code></pre><p><strong>Security model:</strong></p>
+<ul>
+<li><strong>Default:</strong> All traffic allowed</li>
+<li><strong>With policies:</strong> Default deny, explicit allow</li>
+<li><strong>Directions:</strong> Ingress (incoming), Egress (outgoing)</li>
+<li><strong>Selectors:</strong> Pod labels, namespace labels, IP blocks</li>
+</ul>
+<hr>
+<h2 id="storage">Storage &amp; Persistence </h2>
+<h3 id="volume-types">Volume Types </h3>
+<p><strong>1. emptyDir</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cache
+  <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><ul>
+<li><strong>Lifetime:</strong> Pod lifetime</li>
+<li><strong>Use case:</strong> Temporary storage, cache</li>
+</ul>
+<p><strong>2. hostPath</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> host<span class="token punctuation">-</span>data
+  <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /data
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> Directory
+</code></pre><ul>
+<li><strong>Lifetime:</strong> Node lifetime</li>
+<li><strong>Use case:</strong> Node-specific data, debugging</li>
+</ul>
+<p><strong>3. PersistentVolume</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolume
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> pv<span class="token punctuation">-</span>storage
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">capacity</span><span class="token punctuation">:</span>
+    <span class="token key atrule">storage</span><span class="token punctuation">:</span> 10Gi
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">persistentVolumeReclaimPolicy</span><span class="token punctuation">:</span> Retain
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> fast<span class="token punctuation">-</span>ssd
+  <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /mnt/data
+</code></pre><h3 id="persistent-volume-claims">Persistent Volume Claims </h3>
+<p><strong>Purpose:</strong> Request storage resources</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> storage<span class="token punctuation">-</span>claim
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+      <span class="token key atrule">storage</span><span class="token punctuation">:</span> 5Gi
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> fast<span class="token punctuation">-</span>ssd
+</code></pre><p><strong>Access modes:</strong></p>
+<ul>
+<li><strong>ReadWriteOnce (RWO):</strong> Single node read-write</li>
+<li><strong>ReadOnlyMany (ROX):</strong> Multiple nodes read-only</li>
+<li><strong>ReadWriteMany (RWX):</strong> Multiple nodes read-write</li>
+</ul>
+<p><strong>Binding process:</strong></p>
+<ol>
+<li>PVC requests storage with specific requirements</li>
+<li>Kubernetes finds matching PV or creates one dynamically</li>
+<li>PVC binds to PV</li>
+<li>Pod mounts PVC as volume</li>
+</ol>
+<h3 id="storage-classes">Storage Classes </h3>
+<p><strong>Purpose:</strong> Dynamic provisioning of storage</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> storage.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StorageClass
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fast<span class="token punctuation">-</span>ssd
+<span class="token key atrule">provisioner</span><span class="token punctuation">:</span> kubernetes.io/aws<span class="token punctuation">-</span>ebs
+<span class="token key atrule">parameters</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> gp3
+  <span class="token key atrule">iops</span><span class="token punctuation">:</span> <span class="token string">"3000"</span>
+  <span class="token key atrule">fsType</span><span class="token punctuation">:</span> ext4
+<span class="token key atrule">reclaimPolicy</span><span class="token punctuation">:</span> Delete
+<span class="token key atrule">allowVolumeExpansion</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre><p><strong>Dynamic provisioning:</strong></p>
+<ol>
+<li>PVC references StorageClass</li>
+<li>Storage provisioner creates actual storage</li>
+<li>PV automatically created and bound to PVC</li>
+</ol>
+<hr>
+<h2 id="configuration">Configuration Management </h2>
+<h3 id="configmaps">ConfigMaps </h3>
+<p><strong>Purpose:</strong> Store non-sensitive configuration data</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ConfigMap
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>config
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">database_url</span><span class="token punctuation">:</span> <span class="token string">"postgres://db:5432/app"</span>
+  <span class="token key atrule">log_level</span><span class="token punctuation">:</span> <span class="token string">"info"</span>
+  <span class="token key atrule">feature_flags</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    feature_a: true
+    feature_b: false</span>
+  <span class="token key atrule">nginx.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    server {
+        listen 80;
+        location / {
+            proxy_pass http://backend;
+        }
+    }</span>
+</code></pre><p><strong>Usage in pods:</strong></p>
+<p><strong>Environment variables:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">envFrom</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">configMapRef</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>config
+  <span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> LOG_LEVEL
+    <span class="token key atrule">valueFrom</span><span class="token punctuation">:</span>
+      <span class="token key atrule">configMapKeyRef</span><span class="token punctuation">:</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>config
+        <span class="token key atrule">key</span><span class="token punctuation">:</span> log_level
+</code></pre><p><strong>Volume mounts:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> config
+    <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /etc/nginx/nginx.conf
+    <span class="token key atrule">subPath</span><span class="token punctuation">:</span> nginx.conf
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> config
+  <span class="token key atrule">configMap</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>config
+</code></pre><h3 id="secrets">Secrets </h3>
+<p><strong>Purpose:</strong> Store sensitive data (passwords, tokens, keys)</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Secret
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>secrets
+<span class="token key atrule">type</span><span class="token punctuation">:</span> Opaque
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">username</span><span class="token punctuation">:</span> YWRtaW4=  <span class="token comment"># base64 encoded</span>
+  <span class="token key atrule">password</span><span class="token punctuation">:</span> MWYyZDFlMmU2N2Rm  <span class="token comment"># base64 encoded</span>
+<span class="token key atrule">stringData</span><span class="token punctuation">:</span>
+  <span class="token key atrule">api-key</span><span class="token punctuation">:</span> <span class="token string">"plain-text-key"</span>  <span class="token comment"># automatically encoded</span>
+</code></pre><p><strong>Secret types:</strong></p>
+<ul>
+<li><strong>Opaque:</strong> Arbitrary user data</li>
+<li><strong><a href="http://kubernetes.io/service-account-token:">kubernetes.io/service-account-token:</a></strong> Service account tokens</li>
+<li><strong><a href="http://kubernetes.io/dockercfg:">kubernetes.io/dockercfg:</a></strong> Docker registry credentials</li>
+<li><strong><a href="http://kubernetes.io/tls:">kubernetes.io/tls:</a></strong> TLS certificates</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> DB_PASSWORD
+    <span class="token key atrule">valueFrom</span><span class="token punctuation">:</span>
+      <span class="token key atrule">secretKeyRef</span><span class="token punctuation">:</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>secrets
+        <span class="token key atrule">key</span><span class="token punctuation">:</span> password
+  <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> certs
+    <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /etc/ssl/certs
+    <span class="token key atrule">readOnly</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> certs
+  <span class="token key atrule">secret</span><span class="token punctuation">:</span>
+    <span class="token key atrule">secretName</span><span class="token punctuation">:</span> tls<span class="token punctuation">-</span>secret
+</code></pre><h3 id="resource-quotas">Resource Quotas </h3>
+<p><strong>Purpose:</strong> Limit resource consumption per namespace</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ResourceQuota
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> quota
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> development
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hard</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests.cpu</span><span class="token punctuation">:</span> <span class="token string">"4"</span>
+    <span class="token key atrule">requests.memory</span><span class="token punctuation">:</span> 8Gi
+    <span class="token key atrule">limits.cpu</span><span class="token punctuation">:</span> <span class="token string">"8"</span>
+    <span class="token key atrule">limits.memory</span><span class="token punctuation">:</span> 16Gi
+    <span class="token key atrule">pods</span><span class="token punctuation">:</span> <span class="token string">"10"</span>
+    <span class="token key atrule">persistentvolumeclaims</span><span class="token punctuation">:</span> <span class="token string">"4"</span>
+</code></pre><hr>
+<h2 id="security">Security Model </h2>
+<h3 id="rbac-role-based-access-control">RBAC (Role-Based Access Control) </h3>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Subject:</strong> Users, groups, service accounts</li>
+<li><strong>Verb:</strong> Actions (get, list, create, update, delete)</li>
+<li><strong>Resource:</strong> API objects (pods, services, deployments)</li>
+</ul>
+<p><strong>Role (namespace-scoped):</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Role
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> development
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> pod<span class="token punctuation">-</span>reader
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">""</span><span class="token punctuation">]</span>
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"pods"</span><span class="token punctuation">]</span>
+  <span class="token key atrule">verbs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> <span class="token string">"watch"</span><span class="token punctuation">,</span> <span class="token string">"list"</span><span class="token punctuation">]</span>
+</code></pre><p><strong>ClusterRole (cluster-scoped):</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>reader
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">""</span><span class="token punctuation">]</span>
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"nodes"</span><span class="token punctuation">]</span>
+  <span class="token key atrule">verbs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> <span class="token string">"list"</span><span class="token punctuation">]</span>
+</code></pre><p><strong>RoleBinding:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> RoleBinding
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> read<span class="token punctuation">-</span>pods
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> development
+<span class="token key atrule">subjects</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">kind</span><span class="token punctuation">:</span> User
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> jane
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> rbac.authorization.k8s.io
+<span class="token key atrule">roleRef</span><span class="token punctuation">:</span>
+  <span class="token key atrule">kind</span><span class="token punctuation">:</span> Role
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> pod<span class="token punctuation">-</span>reader
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> rbac.authorization.k8s.io
+</code></pre><h3 id="service-accounts">Service Accounts </h3>
+<p><strong>Purpose:</strong> Identity for pods to access Kubernetes API</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>service<span class="token punctuation">-</span>account
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> development
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>service<span class="token punctuation">-</span>account
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+</code></pre><h3 id="security-contexts">Security Contexts </h3>
+<p><strong>Pod-level security:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+    <span class="token key atrule">runAsGroup</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+    <span class="token key atrule">fsGroup</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+    <span class="token key atrule">seccompProfile</span><span class="token punctuation">:</span>
+      <span class="token key atrule">type</span><span class="token punctuation">:</span> RuntimeDefault
+</code></pre><p><strong>Container-level security:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+    <span class="token key atrule">allowPrivilegeEscalation</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">runAsNonRoot</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">readOnlyRootFilesystem</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">capabilities</span><span class="token punctuation">:</span>
+      <span class="token key atrule">drop</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ALL
+      <span class="token key atrule">add</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> NET_BIND_SERVICE
+</code></pre><h3 id="pod-security-standards">Pod Security Standards </h3>
+<p><strong>Privileged:</strong> No restrictions<br>
+<strong>Baseline:</strong> Minimal restrictions, prevents known privilege escalations<br>
+<strong>Restricted:</strong> Heavily restricted, follows pod hardening best practices</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> secure<span class="token punctuation">-</span>namespace
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">pod-security.kubernetes.io/enforce</span><span class="token punctuation">:</span> restricted
+    <span class="token key atrule">pod-security.kubernetes.io/audit</span><span class="token punctuation">:</span> restricted
+    <span class="token key atrule">pod-security.kubernetes.io/warn</span><span class="token punctuation">:</span> restricted
+</code></pre><hr>
+<h2 id="scaling">Scaling &amp; Resource Management </h2>
+<h3 id="resource-requests-and-limits">Resource Requests and Limits </h3>
+<p><strong>Requests:</strong> Guaranteed resources for scheduling<br>
+<strong>Limits:</strong> Maximum resources a container can use</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+      <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"256Mi"</span>
+      <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+    <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+      <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"512Mi"</span>
+      <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"500m"</span>
+</code></pre><p><strong>CPU units:</strong></p>
+<ul>
+<li><code>1</code> = 1 CPU core</li>
+<li><code>500m</code> = 0.5 CPU core</li>
+<li><code>100m</code> = 0.1 CPU core</li>
+</ul>
+<p><strong>Memory units:</strong></p>
+<ul>
+<li><code>Ki</code> = Kibibytes (1024 bytes)</li>
+<li><code>Mi</code> = Mebibytes (1024 Ki)</li>
+<li><code>Gi</code> = Gibibytes (1024 Mi)</li>
+</ul>
+<h3 id="quality-of-service-classes">Quality of Service Classes </h3>
+<p><strong>Guaranteed:</strong> Requests = limits for all containers</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"256Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+  <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"256Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+</code></pre><p><strong>Burstable:</strong> Has requests &lt; limits</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"128Mi"</span>
+  <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"256Mi"</span>
+</code></pre><p><strong>BestEffort:</strong> No requests or limits specified</p>
+<p><strong>Eviction order:</strong> BestEffort → Burstable → Guaranteed</p>
+<h3 id="horizontal-pod-autoscaler-hpa">Horizontal Pod Autoscaler (HPA) </h3>
+<p><strong>Purpose:</strong> Automatically scale pod replicas based on metrics</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> autoscaling/v2
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> HorizontalPodAutoscaler
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>hpa
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">scaleTargetRef</span><span class="token punctuation">:</span>
+    <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+    <span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">minReplicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">maxReplicas</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">metrics</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> Resource
+    <span class="token key atrule">resource</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> cpu
+      <span class="token key atrule">target</span><span class="token punctuation">:</span>
+        <span class="token key atrule">type</span><span class="token punctuation">:</span> Utilization
+        <span class="token key atrule">averageUtilization</span><span class="token punctuation">:</span> <span class="token number">70</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> Resource
+    <span class="token key atrule">resource</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> memory
+      <span class="token key atrule">target</span><span class="token punctuation">:</span>
+        <span class="token key atrule">type</span><span class="token punctuation">:</span> Utilization
+        <span class="token key atrule">averageUtilization</span><span class="token punctuation">:</span> <span class="token number">80</span>
+  <span class="token key atrule">behavior</span><span class="token punctuation">:</span>
+    <span class="token key atrule">scaleUp</span><span class="token punctuation">:</span>
+      <span class="token key atrule">stabilizationWindowSeconds</span><span class="token punctuation">:</span> <span class="token number">60</span>
+      <span class="token key atrule">policies</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> Percent
+        <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token number">50</span>
+        <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">60</span>
+    <span class="token key atrule">scaleDown</span><span class="token punctuation">:</span>
+      <span class="token key atrule">stabilizationWindowSeconds</span><span class="token punctuation">:</span> <span class="token number">300</span>
+      <span class="token key atrule">policies</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> Percent
+        <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token number">10</span>
+        <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">60</span>
+</code></pre><p><strong>Scaling algorithm:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>desiredReplicas = ceil[currentReplicas * (currentMetricValue / desiredMetricValue)]
+
+Example:
+- Current replicas: 3
+- Current CPU usage: 90%
+- Target CPU usage: 70%
+- Calculation: ceil[3 * (90/70)] = ceil[3.86] = 4 replicas
+</code></pre><h3 id="vertical-pod-autoscaler-vpa">Vertical Pod Autoscaler (VPA) </h3>
+<p><strong>Purpose:</strong> Automatically adjust CPU and memory requests/limits</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> autoscaling.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> VerticalPodAutoscaler
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>vpa
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">targetRef</span><span class="token punctuation">:</span>
+    <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+    <span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+  <span class="token key atrule">updatePolicy</span><span class="token punctuation">:</span>
+    <span class="token key atrule">updateMode</span><span class="token punctuation">:</span> <span class="token string">"Auto"</span>  <span class="token comment"># Off, Initial, Auto</span>
+  <span class="token key atrule">resourcePolicy</span><span class="token punctuation">:</span>
+    <span class="token key atrule">containerPolicies</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">containerName</span><span class="token punctuation">:</span> app
+      <span class="token key atrule">maxAllowed</span><span class="token punctuation">:</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token number">1</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> 2Gi
+      <span class="token key atrule">minAllowed</span><span class="token punctuation">:</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 100m
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> 128Mi
+</code></pre><h3 id="cluster-autoscaler">Cluster Autoscaler </h3>
+<p><strong>Purpose:</strong> Automatically adjust cluster size based on pod resource requirements</p>
+<p><strong>When it scales up:</strong></p>
+<ul>
+<li>Pods are pending due to insufficient resources</li>
+<li>No suitable node available</li>
+</ul>
+<p><strong>When it scales down:</strong></p>
+<ul>
+<li>Node utilization is low (&lt; 50% by default)</li>
+<li>All pods can be rescheduled to other nodes</li>
+</ul>
+<hr>
+<h2 id="advanced-concepts">Advanced Concepts </h2>
+<h3 id="custom-resource-definitions-crds">Custom Resource Definitions (CRDs) </h3>
+<p><strong>Purpose:</strong> Extend Kubernetes API with custom objects</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apiextensions.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> CustomResourceDefinition
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> databases.stable.example.com
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">group</span><span class="token punctuation">:</span> stable.example.com
+  <span class="token key atrule">versions</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> v1
+    <span class="token key atrule">served</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">storage</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">schema</span><span class="token punctuation">:</span>
+      <span class="token key atrule">openAPIV3Schema</span><span class="token punctuation">:</span>
+        <span class="token key atrule">type</span><span class="token punctuation">:</span> object
+        <span class="token key atrule">properties</span><span class="token punctuation">:</span>
+          <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+            <span class="token key atrule">type</span><span class="token punctuation">:</span> object
+            <span class="token key atrule">properties</span><span class="token punctuation">:</span>
+              <span class="token key atrule">size</span><span class="token punctuation">:</span>
+                <span class="token key atrule">type</span><span class="token punctuation">:</span> string
+                <span class="token key atrule">enum</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"small"</span><span class="token punctuation">,</span> <span class="token string">"medium"</span><span class="token punctuation">,</span> <span class="token string">"large"</span><span class="token punctuation">]</span>
+              <span class="token key atrule">version</span><span class="token punctuation">:</span>
+                <span class="token key atrule">type</span><span class="token punctuation">:</span> string
+  <span class="token key atrule">scope</span><span class="token punctuation">:</span> Namespaced
+  <span class="token key atrule">names</span><span class="token punctuation">:</span>
+    <span class="token key atrule">plural</span><span class="token punctuation">:</span> databases
+    <span class="token key atrule">singular</span><span class="token punctuation">:</span> database
+    <span class="token key atrule">kind</span><span class="token punctuation">:</span> Database
+</code></pre><p><strong>Using the CRD:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> stable.example.com/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Database
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>database
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">size</span><span class="token punctuation">:</span> medium
+  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"13.4"</span>
+</code></pre><h3 id="operators">Operators </h3>
+<p><strong>Purpose:</strong> Automate complex application lifecycle management</p>
+<p><strong>Operator pattern:</strong></p>
+<ol>
+<li><strong>Custom Resource:</strong> Desired state of application</li>
+<li><strong>Controller:</strong> Watches CR and manages application</li>
+<li><strong>Domain knowledge:</strong> Encoded operational procedures</li>
+</ol>
+<p><strong>Example - Database Operator:</strong></p>
+<ul>
+<li>Creates database pods, services, persistent volumes</li>
+<li>Handles backups, restores, upgrades</li>
+<li>Monitors health and performs recovery</li>
+</ul>
+<h3 id="service-mesh-istio">Service Mesh (Istio) </h3>
+<p><strong>Purpose:</strong> Handle service-to-service communication, security, observability</p>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Data plane:</strong> Sidecar proxies (Envoy) in each pod</li>
+<li><strong>Control plane:</strong> Manages proxy configuration</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li><strong>Traffic management:</strong> Load balancing, circuit breaking, retries</li>
+<li><strong>Security:</strong> mTLS, authorization policies</li>
+<li><strong>Observability:</strong> Metrics, tracing, logging</li>
+</ul>
+<h3 id="helm">Helm </h3>
+<p><strong>Purpose:</strong> Package manager for Kubernetes</p>
+<p><strong>Chart structure:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>mychart/
+  Chart.yaml          # Chart metadata
+  values.yaml         # Default configuration values
+  templates/          # Kubernetes YAML templates
+    deployment.yaml
+    service.yaml
+    ingress.yaml
+</code></pre><p><strong>Templating:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.name <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.replicas <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.name <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.image.repository <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.image.tag <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre><hr>
+<h2 id="production">Production Considerations </h2>
+<h3 id="high-availability">High Availability </h3>
+<p><strong>Control plane HA:</strong></p>
+<ul>
+<li>Multiple master nodes (3 or 5)</li>
+<li>Load balancer in front of API servers</li>
+<li>etcd cluster with odd number of nodes</li>
+</ul>
+<p><strong>Application HA:</strong></p>
+<ul>
+<li>Multiple replicas across zones</li>
+<li>Pod disruption budgets</li>
+<li>Readiness and liveness probes</li>
+<li>Circuit breakers and retries</li>
+</ul>
+<h3 id="monitoring-and-observability">Monitoring and Observability </h3>
+<p><strong>The three pillars:</strong></p>
+<p><strong>1. Metrics (Prometheus)</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># ServiceMonitor for Prometheus</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> monitoring.coreos.com/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceMonitor
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>metrics
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> metrics
+    <span class="token key atrule">interval</span><span class="token punctuation">:</span> 30s
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /metrics
+</code></pre><p><strong>2. Logging (ELK Stack)</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Fluentd DaemonSet for log collection</span>
+<span class="token key atrule">containers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">:</span>v1.14
+  <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> host<span class="token punctuation">-</span>logs
+    <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/log
+    <span class="token key atrule">readOnly</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre><p><strong>3. Tracing (Jaeger)</strong></p>
+<ul>
+<li>Distributed tracing across microservices</li>
+<li>Request flow visualization</li>
+<li>Performance bottleneck identification</li>
+</ul>
+<h3 id="backup-and-disaster-recovery">Backup and Disaster Recovery </h3>
+<p><strong>etcd backup:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>etcdctl snapshot save backup.db <span class="token punctuation">\</span>
+  <span class="token parameter variable">--endpoints</span><span class="token operator">=</span>https://127.0.0.1:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--cacert</span><span class="token operator">=</span>/etc/ssl/etcd/ca.crt <span class="token punctuation">\</span>
+  <span class="token parameter variable">--cert</span><span class="token operator">=</span>/etc/ssl/etcd/client.crt <span class="token punctuation">\</span>
+  <span class="token parameter variable">--key</span><span class="token operator">=</span>/etc/ssl/etcd/client.key
+</code></pre><p><strong>Application data backup:</strong></p>
+<ul>
+<li>Volume snapshots</li>
+<li>Database dumps</li>
+<li>Cross-region replication</li>
+</ul>
+<h3 id="security-best-practices">Security Best Practices </h3>
+<p><strong>Network security:</strong></p>
+<ul>
+<li>Network policies for microsegmentation</li>
+<li>Service mesh for mTLS</li>
+<li>Ingress controllers with WAF</li>
+</ul>
+<p><strong>Image security:</strong></p>
+<ul>
+<li>Scan images for vulnerabilities</li>
+<li>Use minimal base images (distroless)</li>
+<li>Sign images with cosign</li>
+</ul>
+<p><strong>Runtime security:</strong></p>
+<ul>
+<li>Read-only root filesystems</li>
+<li>Non-root users</li>
+<li>Security contexts and PSPs/PSAs</li>
+</ul>
+<h3 id="performance-optimization">Performance Optimization </h3>
+<p><strong>Resource optimization:</strong></p>
+<ul>
+<li>Right-size requests and limits</li>
+<li>Use VPA for recommendations</li>
+<li>Monitor resource utilization</li>
+</ul>
+<p><strong>Network optimization:</strong></p>
+<ul>
+<li>Keep related services in same zone</li>
+<li>Use topology-aware routing</li>
+<li>Optimize service mesh configuration</li>
+</ul>
+<p><strong>Storage optimization:</strong></p>
+<ul>
+<li>Choose appropriate storage classes</li>
+<li>Use local storage for high IOPS</li>
+<li>Implement data lifecycle policies</li>
+</ul>
+<hr>
+<h2 id="interview-prep">Interview Questions &amp; Scenarios </h2>
+<h3 id="basic-concepts">Basic Concepts </h3>
+<p><strong>Q: What is the difference between a Pod and a Deployment?</strong><br>
+A: A Pod is a single instance of an application, while a Deployment manages multiple Pod replicas and provides declarative updates, rolling deployments, and rollback capabilities.</p>
+<p><strong>Q: Explain the Kubernetes networking model.</strong><br>
+A:</p>
+<ul>
+<li>Every pod gets a unique IP address</li>
+<li>Pods can communicate directly without NAT</li>
+<li>Services provide stable endpoints for pod groups</li>
+<li>Ingress handles external HTTP/HTTPS traffic routing</li>
+</ul>
+<p><strong>Q: What happens when you run <code>kubectl apply -f deployment.yaml</code>?</strong><br>
+A:</p>
+<ol>
+<li>kubectl sends YAML to API server</li>
+<li>API server validates and stores in etcd</li>
+<li>Deployment controller sees new deployment</li>
+<li>Creates ReplicaSet with pod template</li>
+<li>ReplicaSet controller creates pods</li>
+<li>Scheduler assigns pods to nodes</li>
+<li>kubelet starts containers on assigned nodes</li>
+</ol>
+<h3 id="troubleshooting-scenarios">Troubleshooting Scenarios </h3>
+<p><strong>Q: A pod is stuck in Pending state. How do you troubleshoot?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check pod status and events</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Common causes:</span>
+<span class="token comment"># 1. Insufficient resources on nodes</span>
+kubectl <span class="token function">top</span> nodes
+
+<span class="token comment"># 2. Image pull errors</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> image
+
+<span class="token comment"># 3. Storage issues</span>
+kubectl get pvc
+kubectl describe pvc <span class="token operator">&lt;</span>pvc-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 4. Scheduling constraints</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> nodeaffinity
+</code></pre><p><strong>Q: Pods are running but service isn't working. What could be wrong?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check service endpoints</span>
+kubectl get endpoints <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># If no endpoints, check:</span>
+<span class="token comment"># 1. Service selector matches pod labels</span>
+kubectl describe <span class="token function">service</span> <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+kubectl get pods --show-labels
+
+<span class="token comment"># 2. Pod readiness probe status</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 3. Network policies blocking traffic</span>
+kubectl get networkpolicies
+</code></pre><p><strong>Q: Application is running out of memory and getting killed. How do you fix it?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check resource usage</span>
+kubectl <span class="token function">top</span> pods
+
+<span class="token comment"># Check events for OOMKilled</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Solutions:</span>
+<span class="token comment"># 1. Increase memory limits</span>
+<span class="token comment"># 2. Use VPA for recommendations</span>
+<span class="token comment"># 3. Optimize application memory usage</span>
+<span class="token comment"># 4. Use HPA to scale horizontally</span>
+</code></pre><h3 id="scaling-scenarios">Scaling Scenarios </h3>
+<p><strong>Q: Your application needs to handle 10x traffic during Black Friday. How do you prepare?</strong><br>
+A:</p>
+<ol>
+<li>
+<p><strong>Horizontal Pod Autoscaler:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">minReplicas</span><span class="token punctuation">:</span> <span class="token number">10</span>    <span class="token comment"># Pre-scale before event</span>
+  <span class="token key atrule">maxReplicas</span><span class="token punctuation">:</span> <span class="token number">100</span>   <span class="token comment"># Allow significant scaling</span>
+  <span class="token key atrule">metrics</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> Resource
+    <span class="token key atrule">resource</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> cpu
+      <span class="token key atrule">target</span><span class="token punctuation">:</span>
+        <span class="token key atrule">averageUtilization</span><span class="token punctuation">:</span> <span class="token number">60</span>  <span class="token comment"># Scale earlier</span>
+</code></pre></li>
+<li>
+<p><strong>Cluster Autoscaler:</strong> Ensure cluster can add nodes</p>
+</li>
+<li>
+<p><strong>Load testing:</strong> Verify scaling behavior</p>
+</li>
+<li>
+<p><strong>Resource limits:</strong> Ensure adequate quotas</p>
+</li>
+<li>
+<p><strong>Monitoring:</strong> Set up alerts for key metrics</p>
+</li>
+</ol>
+<p><strong>Q: How do you perform a zero-downtime deployment?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Rolling update strategy</span>
+<span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> RollingUpdate
+  <span class="token key atrule">rollingUpdate</span><span class="token punctuation">:</span>
+    <span class="token key atrule">maxUnavailable</span><span class="token punctuation">:</span> <span class="token number">0</span>      <span class="token comment"># Keep all pods running</span>
+    <span class="token key atrule">maxSurge</span><span class="token punctuation">:</span> <span class="token number">1</span>           <span class="token comment"># Add one pod at a time</span>
+
+<span class="token comment"># Readiness probe to verify new pods</span>
+<span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /health
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+
+<span class="token comment"># Pre-stop hook for graceful shutdown</span>
+<span class="token key atrule">lifecycle</span><span class="token punctuation">:</span>
+  <span class="token key atrule">preStop</span><span class="token punctuation">:</span>
+    <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"/bin/sh"</span><span class="token punctuation">,</span> <span class="token string">"-c"</span><span class="token punctuation">,</span> <span class="token string">"sleep 10"</span><span class="token punctuation">]</span>
+</code></pre><h3 id="security-scenarios">Security Scenarios </h3>
+<p><strong>Q: How do you secure secrets in Kubernetes?</strong><br>
+A:</p>
+<ol>
+<li><strong>Use Secrets instead of ConfigMaps</strong> for sensitive data</li>
+<li><strong>Encrypt at rest:</strong> Enable etcd encryption</li>
+<li><strong>RBAC:</strong> Limit access to secrets</li>
+<li><strong>External secret management:</strong> Use Vault, AWS Secrets Manager</li>
+<li><strong>Rotation:</strong> Implement secret rotation policies</li>
+</ol>
+<p><strong>Q: A pod needs to access AWS resources. How do you handle authentication securely?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Option 1: IAM Roles for Service Accounts (IRSA)</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> aws<span class="token punctuation">-</span>service<span class="token punctuation">-</span>account
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+    <span class="token key atrule">eks.amazonaws.com/role-arn</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>ACCOUNT<span class="token punctuation">:</span>role/EKS_ROLE
+
+<span class="token comment"># Option 2: Workload Identity (GKE)</span>
+<span class="token comment"># Option 3: External Secrets Operator</span>
+</code></pre><h3 id="advanced-scenarios">Advanced Scenarios </h3>
+<p><strong>Q: You need to run a database in Kubernetes. What considerations are important?</strong><br>
+A:</p>
+<ol>
+<li><strong>StatefulSet</strong> for stable identities and ordered deployment</li>
+<li><strong>Persistent Volumes</strong> for data persistence</li>
+<li><strong>Resource guarantees</strong> with requests = limits</li>
+<li><strong>Backup strategy</strong> with volume snapshots</li>
+<li><strong>Monitoring</strong> for database-specific metrics</li>
+<li><strong>Security</strong> with network policies and encryption</li>
+</ol>
+<p><strong>Q: How do you implement blue-green deployments in Kubernetes?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Strategy 1: Two deployments + service selector</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> myapp
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> blue  <span class="token comment"># Switch to 'green' for deployment</span>
+
+<span class="token punctuation">---</span>
+<span class="token comment"># Blue deployment</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>blue
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> myapp
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> blue
+
+<span class="token punctuation">---</span>
+<span class="token comment"># Green deployment  </span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>green
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> myapp
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> green
+</code></pre><h3 id="performance-questions">Performance Questions </h3>
+<p><strong>Q: Your application has high latency. How do you investigate and optimize?</strong><br>
+A:</p>
+<ol>
+<li><strong>Application metrics:</strong> Response times, error rates</li>
+<li><strong>Resource utilization:</strong> CPU, memory, network, disk</li>
+<li><strong>Dependencies:</strong> Database, external APIs, other services</li>
+<li><strong>Network latency:</strong> Inter-pod communication</li>
+<li><strong>Optimization strategies:</strong>
+<ul>
+<li>Horizontal scaling with HPA</li>
+<li>Resource tuning</li>
+<li>Caching layers</li>
+<li>Database optimization</li>
+<li>CDN for static content</li>
+</ul>
+</li>
+</ol>
+<p><strong>Q: How do you ensure your cluster can handle expected load?</strong><br>
+A:</p>
+<ol>
+<li>
+<p><strong>Capacity planning:</strong></p>
+<ul>
+<li>Calculate resource requirements per user</li>
+<li>Plan for peak load + buffer</li>
+<li>Consider failure scenarios</li>
+</ul>
+</li>
+<li>
+<p><strong>Load testing:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Use tools like k6, JMeter, or Artillery</span>
+k6 run <span class="token parameter variable">--vus</span> <span class="token number">1000</span> <span class="token parameter variable">--duration</span> 30m load-test.js
+</code></pre></li>
+<li>
+<p><strong>Monitoring:</strong></p>
+<ul>
+<li>Set up alerts for resource utilization</li>
+<li>Monitor application SLIs/SLOs</li>
+<li>Track business metrics</li>
+</ul>
+</li>
+</ol>
+<h3 id="real-world-problem-solving">Real-World Problem Solving </h3>
+<p><strong>Q: Your production cluster has a memory leak causing nodes to run out of memory. How do you handle this emergency?</strong><br>
+A:<br>
+<strong>Immediate actions:</strong></p>
+<ol>
+<li>Scale out healthy nodes with cluster autoscaler</li>
+<li>Identify problematic pods: <code>kubectl top pods --sort-by=memory</code></li>
+<li>Restart high-memory pods: <code>kubectl delete pod &lt;pod-name&gt;</code></li>
+<li>Add resource limits to prevent future issues</li>
+</ol>
+<p><strong>Long-term solutions:</strong></p>
+<ol>
+<li>Implement proper monitoring and alerting</li>
+<li>Set up VPA to right-size resources</li>
+<li>Use chaos engineering to test resilience</li>
+<li>Implement pod disruption budgets</li>
+</ol>
+<p><strong>Q: A critical service is down. Walk me through your incident response.</strong><br>
+A:</p>
+<ol>
+<li><strong>Detection:</strong> Monitoring alerts, user reports</li>
+<li><strong>Assessment:</strong><pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl get pods <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>critical-service
+kubectl describe pods <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>critical-service
+kubectl logs <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>critical-service <span class="token parameter variable">--tail</span><span class="token operator">=</span><span class="token number">100</span>
+</code></pre></li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Scale up replicas if resource issue</li>
+<li>Rollback if recent deployment caused issue</li>
+<li>Route traffic to backup service</li>
+</ul>
+</li>
+<li><strong>Communication:</strong> Update status page, notify stakeholders</li>
+<li><strong>Resolution:</strong> Fix root cause</li>
+<li><strong>Post-mortem:</strong> Document learnings, improve processes</li>
+</ol>
+<h3 id="architecture-questions">Architecture Questions </h3>
+<p><strong>Q: Design a microservices architecture on Kubernetes for an e-commerce platform.</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Services breakdown:</span>
+<span class="token comment"># - Frontend (React SPA)</span>
+<span class="token comment"># - User Service (authentication, profiles)</span>
+<span class="token comment"># - Product Service (catalog, search)</span>
+<span class="token comment"># - Order Service (cart, checkout, orders)</span>
+<span class="token comment"># - Payment Service (payment processing)</span>
+<span class="token comment"># - Inventory Service (stock management)</span>
+<span class="token comment"># - Notification Service (emails, SMS)</span>
+
+<span class="token comment"># Example architecture:</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> ecommerce
+
+<span class="token punctuation">---</span>
+<span class="token comment"># API Gateway (Ingress)</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> api<span class="token punctuation">-</span>gateway
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> ecommerce
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> api.ecommerce.com
+    <span class="token key atrule">http</span><span class="token punctuation">:</span>
+      <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /users
+        <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service
+            <span class="token key atrule">port</span><span class="token punctuation">:</span>
+              <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /products
+        <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> product<span class="token punctuation">-</span>service
+            <span class="token key atrule">port</span><span class="token punctuation">:</span>
+              <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">80</span>
+
+<span class="token punctuation">---</span>
+<span class="token comment"># User Service</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> ecommerce
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>service<span class="token punctuation">:</span>v1.0
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> DB_HOST
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> user<span class="token punctuation">-</span>db
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> REDIS_HOST  
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> redis
+</code></pre><p><strong>Key considerations:</strong></p>
+<ul>
+<li><strong>Service mesh</strong> (Istio) for inter-service communication</li>
+<li><strong>Database per service</strong> pattern with appropriate storage</li>
+<li><strong>Event-driven architecture</strong> using message queues (RabbitMQ/Kafka)</li>
+<li><strong>Observability</strong> with distributed tracing</li>
+<li><strong>Security</strong> with network policies and mTLS</li>
+<li><strong>CI/CD</strong> with GitOps (ArgoCD)</li>
+</ul>
+<h3 id="cost-optimization">Cost Optimization </h3>
+<p><strong>Q: Your Kubernetes costs are too high. How do you optimize them?</strong><br>
+A:</p>
+<ol>
+<li>
+<p><strong>Right-sizing:</strong></p>
+<ul>
+<li>Use VPA recommendations</li>
+<li>Implement resource requests/limits</li>
+<li>Remove over-provisioned resources</li>
+</ul>
+</li>
+<li>
+<p><strong>Scaling optimization:</strong></p>
+<ul>
+<li>Use HPA for automatic scaling</li>
+<li>Implement cluster autoscaler</li>
+<li>Use spot instances for non-critical workloads</li>
+</ul>
+</li>
+<li>
+<p><strong>Storage optimization:</strong></p>
+<ul>
+<li>Use appropriate storage classes</li>
+<li>Implement data lifecycle policies</li>
+<li>Clean up unused PVCs</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoring and governance:</strong></p>
+<ul>
+<li>Implement resource quotas</li>
+<li>Track costs per namespace/team</li>
+<li>Use tools like KubeCost</li>
+</ul>
+</li>
+</ol>
+<h3 id="final-advice-for-interviews">Final Advice for Interviews </h3>
+<p><strong>Key topics to master:</strong></p>
+<ol>
+<li><strong>Core concepts:</strong> Pods, Services, Deployments, ConfigMaps, Secrets</li>
+<li><strong>Networking:</strong> How services work, ingress, network policies</li>
+<li><strong>Storage:</strong> PVs, PVCs, storage classes</li>
+<li><strong>Scaling:</strong> HPA, VPA, cluster autoscaler</li>
+<li><strong>Security:</strong> RBAC, security contexts, network policies</li>
+<li><strong>Troubleshooting:</strong> Common issues and debugging techniques</li>
+</ol>
+<p><strong>Hands-on experience matters:</strong></p>
+<ul>
+<li>Deploy real applications</li>
+<li>Practice troubleshooting scenarios</li>
+<li>Understand kubectl commands deeply</li>
+<li>Know how to read and write YAML manifests</li>
+</ul>
+<p><strong>Architecture thinking:</strong></p>
+<ul>
+<li>Understand when to use different Kubernetes resources</li>
+<li>Know trade-offs between different approaches</li>
+<li>Think about production concerns (HA, security, monitoring)</li>
+</ul>
+<p>Remember: Kubernetes interviews often focus on practical problem-solving. Be prepared to explain not just what something does, but why you would use it and how it fits into a larger system design.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
