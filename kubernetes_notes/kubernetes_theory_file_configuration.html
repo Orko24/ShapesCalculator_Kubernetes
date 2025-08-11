@@ -1,0 +1,289 @@
+<!DOCTYPE html><html><head>
+      <title>kubernetes_theory_file_configuration</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\heman\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p>Perfect! Let me break down <strong>everything</strong> you need to know about Kubernetes using your actual files as examples. This will give you both theoretical knowledge and practical understanding for your interview.</p>
+<h2 id="core-kubernetes-architecture">Core Kubernetes Architecture </h2>
+<p><strong>Master Components:</strong></p>
+<ul>
+<li><strong>API Server</strong> - The front-end to the Kubernetes control plane</li>
+<li><strong>etcd</strong> - Key-value store for all cluster data</li>
+<li><strong>Scheduler</strong> - Assigns pods to nodes</li>
+<li><strong>Controller Manager</strong> - Runs controllers that regulate cluster state</li>
+</ul>
+<p><strong>Node Components:</strong></p>
+<ul>
+<li><strong>kubelet</strong> - Agent that runs on each node, manages pods</li>
+<li><strong>kube-proxy</strong> - Network proxy, handles service networking</li>
+<li><strong>Container Runtime</strong> - Docker/containerd that actually runs containers</li>
+</ul>
+<h2 id="your-kubernetes-resources-explained">Your Kubernetes Resources Explained </h2>
+<h3 id="1-namespace-namespaceyaml">1. <strong>Namespace</strong> (<code>namespace.yaml</code>) </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator
+</code></pre><p><strong>What it does:</strong> Creates an isolated environment within your cluster<br>
+<strong>Interview points:</strong></p>
+<ul>
+<li>Namespaces provide logical separation (like folders)</li>
+<li>Default namespaces: <code>default</code>, <code>kube-system</code>, <code>kube-public</code></li>
+<li>Resource quotas can be applied per namespace</li>
+<li>Names must be unique within a namespace, not across cluster</li>
+</ul>
+<h3 id="2-configmap-configmapyaml">2. <strong>ConfigMap</strong> (<code>configmap.yaml</code>) </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">kind</span><span class="token punctuation">:</span> ConfigMap
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">FRONTEND_PATH</span><span class="token punctuation">:</span> <span class="token string">"/app/frontend"</span>
+  <span class="token key atrule">PYTHONPATH</span><span class="token punctuation">:</span> <span class="token string">"/app"</span>
+  <span class="token key atrule">HOST</span><span class="token punctuation">:</span> <span class="token string">"0.0.0.0"</span>
+  <span class="token key atrule">PORT</span><span class="token punctuation">:</span> <span class="token string">"8000"</span>
+</code></pre><p><strong>What it does:</strong> Stores non-sensitive configuration data<br>
+<strong>Interview points:</strong></p>
+<ul>
+<li>Separates configuration from application code</li>
+<li>Can be mounted as volumes or environment variables</li>
+<li>Immutable - changes require pod restart</li>
+<li>Alternative to hardcoding config in Docker images</li>
+</ul>
+<h3 id="3-deployment-deploymentyaml">3. <strong>Deployment</strong> (<code>deployment.yaml</code>) </h3>
+<p>This is the <strong>most important</strong> resource - study this thoroughly!</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>  <span class="token comment"># How many pod copies</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator  <span class="token comment"># Which pods this manages</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>  <span class="token comment"># Pod template</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator<span class="token punctuation">:</span>latest
+        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> Never  <span class="token comment"># Don't pull from registry</span>
+</code></pre><p><strong>Key Deployment Concepts:</strong></p>
+<p><strong>Replica Management:</strong></p>
+<ul>
+<li>Ensures 3 pods are always running</li>
+<li>If a pod dies, Deployment creates a new one</li>
+<li><strong>Rolling updates</strong> - gradual replacement of old pods with new ones</li>
+</ul>
+<p><strong>Resource Limits:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token key atrule">requests</span><span class="token punctuation">:</span>  <span class="token comment"># Guaranteed resources</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"128Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"100m"</span>
+  <span class="token key atrule">limits</span><span class="token punctuation">:</span>    <span class="token comment"># Maximum allowed</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"512Mi"</span> 
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"500m"</span>
+</code></pre><p><strong>Health Checks:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>   <span class="token comment"># Is the container alive?</span>
+  <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /health
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8000</span>
+<span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>  <span class="token comment"># Is the container ready to serve traffic?</span>
+  <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /health
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8000</span>
+</code></pre><p><strong>Interview points:</strong></p>
+<ul>
+<li><strong>Liveness probe fails</strong> → Kubernetes restarts the container</li>
+<li><strong>Readiness probe fails</strong> → Kubernetes removes pod from service endpoints</li>
+<li><strong>CPU units:</strong> 100m = 0.1 CPU core, 1000m = 1 full core</li>
+<li><strong>Memory units:</strong> Mi = Mebibytes, Gi = Gibibytes</li>
+</ul>
+<h3 id="4-service-serviceyaml">4. <strong>Service</strong> (<code>service.yaml</code>) </h3>
+<p>You have TWO service types:</p>
+<p><strong>ClusterIP Service:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">type</span><span class="token punctuation">:</span> ClusterIP  <span class="token comment"># Internal cluster access only</span>
+<span class="token key atrule">ports</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>      <span class="token comment"># Service port</span>
+  <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8000</span>  <span class="token comment"># Container port</span>
+</code></pre><p><strong>NodePort Service:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+<span class="token key atrule">ports</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">30000</span>  <span class="token comment"># External port on every node</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+  <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8000</span>
+</code></pre><p><strong>Service Types (Critical for interviews):</strong></p>
+<ol>
+<li><strong>ClusterIP</strong> - Internal cluster communication only</li>
+<li><strong>NodePort</strong> - Exposes service on each node's IP at a static port</li>
+<li><strong>LoadBalancer</strong> - Cloud provider creates external load balancer</li>
+<li><strong>ExternalName</strong> - Maps service to external DNS name</li>
+</ol>
+<p><strong>How Services Work:</strong></p>
+<ul>
+<li>Uses <strong>selectors</strong> to find pods: <code>app: shapes-calculator</code></li>
+<li>Creates <strong>endpoints</strong> - list of pod IPs that match the selector</li>
+<li><strong>kube-proxy</strong> updates iptables rules for load balancing</li>
+</ul>
+<h3 id="5-horizontal-pod-autoscaler-hpayaml">5. <strong>Horizontal Pod Autoscaler</strong> (<code>hpa.yaml</code>) </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">kind</span><span class="token punctuation">:</span> HorizontalPodAutoscaler
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">minReplicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">maxReplicas</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">metrics</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> Resource
+    <span class="token key atrule">resource</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> cpu
+      <span class="token key atrule">target</span><span class="token punctuation">:</span>
+        <span class="token key atrule">averageUtilization</span><span class="token punctuation">:</span> <span class="token number">70</span>
+</code></pre><p><strong>What it does:</strong> Automatically scales pod replicas based on metrics<br>
+<strong>Interview points:</strong></p>
+<ul>
+<li>Requires <strong>metrics server</strong> to be installed</li>
+<li>Checks metrics every 15 seconds (default)</li>
+<li><strong>Scale up:</strong> Fast (can double replicas)</li>
+<li><strong>Scale down:</strong> Conservative (removes 1 pod at a time)</li>
+<li>Works with CPU, memory, and custom metrics</li>
+</ul>
+<h3 id="6-ingress-ingressyaml">6. <strong>Ingress</strong> (<code>ingress.yaml</code>) </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator.local
+    <span class="token key atrule">http</span><span class="token punctuation">:</span>
+      <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+        <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator<span class="token punctuation">-</span>service
+</code></pre><p><strong>What it does:</strong> HTTP/HTTPS routing to services<br>
+<strong>Interview points:</strong></p>
+<ul>
+<li>Requires <strong>Ingress Controller</strong> (nginx, traefik, etc.)</li>
+<li>Provides Layer 7 load balancing</li>
+<li>Can terminate SSL/TLS</li>
+<li>Path-based and host-based routing</li>
+<li>More cost-effective than multiple LoadBalancer services</li>
+</ul>
+<h3 id="7-pod-disruption-budget-pdbyaml">7. <strong>Pod Disruption Budget</strong> (<code>pdb.yaml</code>) </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">kind</span><span class="token punctuation">:</span> PodDisruptionBudget
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">minAvailable</span><span class="token punctuation">:</span> <span class="token number">1</span>  <span class="token comment"># Always keep at least 1 pod running</span>
+</code></pre><p><strong>What it does:</strong> Protects applications during voluntary disruptions<br>
+<strong>Interview points:</strong></p>
+<ul>
+<li>Prevents all pods from being terminated during updates</li>
+<li><strong>Voluntary disruptions:</strong> Node maintenance, cluster upgrades</li>
+<li><strong>Involuntary disruptions:</strong> Hardware failures, kernel panics</li>
+<li>Can specify <code>minAvailable</code> or <code>maxUnavailable</code></li>
+</ul>
+<h2 id="critical-kubernetes-concepts-for-interviews">Critical Kubernetes Concepts for Interviews </h2>
+<h3 id="1-pod-lifecycle"><strong>1. Pod Lifecycle</strong> </h3>
+<ul>
+<li><strong>Pending</strong> → Waiting for scheduling</li>
+<li><strong>Running</strong> → At least one container is running</li>
+<li><strong>Succeeded</strong> → All containers terminated successfully</li>
+<li><strong>Failed</strong> → At least one container failed</li>
+<li><strong>Unknown</strong> → Cannot determine pod status</li>
+</ul>
+<h3 id="2-rolling-updates"><strong>2. Rolling Updates</strong> </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Update deployment image</span>
+kubectl <span class="token builtin class-name">set</span> image deployment/shapes-calculator shapes-calculator<span class="token operator">=</span>new-image:v2
+
+<span class="token comment"># Check rollout status</span>
+kubectl rollout status deployment/shapes-calculator
+
+<span class="token comment"># Rollback to previous version</span>
+kubectl rollout undo deployment/shapes-calculator
+</code></pre><h3 id="3-labels-and-selectors"><strong>3. Labels and Selectors</strong> </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> shapes<span class="token punctuation">-</span>calculator
+    <span class="token key atrule">tier</span><span class="token punctuation">:</span> frontend
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+</code></pre><ul>
+<li><strong>Labels</strong> - Key-value pairs attached to objects</li>
+<li><strong>Selectors</strong> - Query labels to find resources</li>
+<li>Used by Services, Deployments, and many other resources</li>
+</ul>
+<h3 id="4-storage-youll-need-this-for-file-projects"><strong>4. Storage (You'll need this for file projects)</strong> </h3>
+<ul>
+<li><strong>Volumes</strong> - Shared storage for containers in a pod</li>
+<li><strong>PersistentVolumes</strong> - Cluster-wide storage resources</li>
+<li><strong>PersistentVolumeClaims</strong> - Requests for storage by pods</li>
+<li><strong>StorageClasses</strong> - Dynamic provisioning of storage</li>
+</ul>
+<h3 id="5-security"><strong>5. Security</strong> </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+  <span class="token key atrule">runAsNonRoot</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">capabilities</span><span class="token punctuation">:</span>
+    <span class="token key atrule">drop</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ALL
+</code></pre><ul>
+<li><strong>RBAC</strong> - Role-Based Access Control</li>
+<li><strong>Security Contexts</strong> - Define security settings for pods/containers</li>
+<li><strong>Network Policies</strong> - Control traffic between pods</li>
+<li><strong>Secrets</strong> - Store sensitive data (passwords, tokens)</li>
+</ul>
+<h2 id="common-interview-questions--answers">Common Interview Questions &amp; Answers </h2>
+<p><strong>Q: What happens when a pod dies?</strong><br>
+A: The Deployment controller detects the missing pod and creates a new one to maintain the desired replica count.</p>
+<p><strong>Q: How does Service discovery work?</strong><br>
+A: Kubernetes provides DNS records for services. Pods can access <code>shapes-calculator-service.shapes-calculator.svc.cluster.local</code></p>
+<p><strong>Q: What's the difference between Deployment and StatefulSet?</strong><br>
+A: Deployments are for stateless apps (pods are interchangeable). StatefulSets are for stateful apps (pods have stable identities, ordered deployment).</p>
+<p><strong>Q: How do you troubleshoot a failing pod?</strong><br>
+A:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> -- /bin/bash
+</code></pre><p><strong>Q: What's the difference between requests and limits?</strong><br>
+A: <strong>Requests</strong> = guaranteed resources (used for scheduling). <strong>Limits</strong> = maximum allowed resources (container killed if exceeded).</p>
+<h2 id="essential-kubectl-commands">Essential kubectl Commands </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Basic operations</span>
+kubectl get pods <span class="token parameter variable">-n</span> shapes-calculator
+kubectl describe deployment shapes-calculator <span class="token parameter variable">-n</span> shapes-calculator
+kubectl logs <span class="token parameter variable">-f</span> deployment/shapes-calculator <span class="token parameter variable">-n</span> shapes-calculator
+
+<span class="token comment"># Scaling</span>
+kubectl scale deployment shapes-calculator <span class="token parameter variable">--replicas</span><span class="token operator">=</span><span class="token number">5</span> <span class="token parameter variable">-n</span> shapes-calculator
+
+<span class="token comment"># Updates</span>
+kubectl <span class="token builtin class-name">set</span> image deployment/shapes-calculator shapes-calculator<span class="token operator">=</span>new-image:v2 <span class="token parameter variable">-n</span> shapes-calculator
+
+<span class="token comment"># Port forwarding for testing</span>
+kubectl port-forward service/shapes-calculator-service <span class="token number">8080</span>:80 <span class="token parameter variable">-n</span> shapes-calculator
+
+<span class="token comment"># Apply configurations</span>
+kubectl apply <span class="token parameter variable">-f</span> namespace.yaml
+kubectl apply <span class="token parameter variable">-f</span> <span class="token builtin class-name">.</span>  <span class="token comment"># All YAML files in directory</span>
+</code></pre><p>This covers the <strong>core concepts</strong> you need for Kubernetes interviews. Your file structure shows you understand production-ready Kubernetes deployments with proper resource management, health checks, scaling, and networking!</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
