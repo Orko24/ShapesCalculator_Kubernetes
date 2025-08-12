@@ -1,0 +1,343 @@
+<!DOCTYPE html><html><head>
+      <title>kubernetes_cluster</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\heman\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p>A <strong>Kubernetes cluster</strong> is a collection of machines (physical or virtual) that work together to run containerized applications. Think of it as a <strong>distributed computer system</strong> where you can deploy and manage applications across multiple servers as if they were one big machine.</p>
+<h2 id="what-makes-up-a-kubernetes-cluster">What Makes Up a Kubernetes Cluster? </h2>
+<h3 id="the-simple-explanation">The Simple Explanation: </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Kubernetes Cluster = Control Plane + Worker Nodes
+
+Control Plane = "The Brain" (makes decisions)
+Worker Nodes = "The Muscle" (runs your applications)
+</code></pre><h3 id="detailed-architecture">Detailed Architecture: </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌───────────────────────────────────────────────────────────────┐
+│                    KUBERNETES CLUSTER                         │
+│                                                               │
+│  ┌───────────────────────────────────────────────────────┐    │
+│  │               CONTROL PLANE                           │    │
+│  │  ┌──────────────┐ ┌──────────────┐ ┌─────────────┐    │    │
+│  │  │ API Server   │ │  Scheduler   │ │ Controller  │    │    │
+│  │  │              │ │              │ │ Manager     │    │    │
+│  │  └──────────────┘ └──────────────┘ └─────────────┘    │    │
+│  │  ┌──────────────────────────────────────────────────┐ │    │
+│  │  │              etcd (Database)                     │ │    │
+│  │  └──────────────────────────────────────────────────┘ │    │
+│  └───────────────────────────────────────────────────────┘    │
+│                                │                              │
+│  ┌─────────────────────────────┼───────────────────────────┐  │
+│  │                        WORKER NODES                     │  │
+│  │                                                         │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐      │  │
+│  │  │   Node 1    │  │   Node 2    │  │   Node 3    │      │  │
+│  │  │             │  │             │  │             │      │  │
+│  │  │ ┌─────────┐ │  │ ┌─────────┐ │  │ ┌─────────┐ │      │  │
+│  │  │ │  Pod A  │ │  │ │  Pod B  │ │  │ │  Pod C  │ │      │  │
+│  │  │ └─────────┘ │  │ └─────────┘ │  │ └─────────┘ │      │  │
+│  │  │ ┌─────────┐ │  │ ┌─────────┐ │  │ ┌─────────┐ │      │  │
+│  │  │ │  Pod D  │ │  │ │  Pod E  │ │  │ │  Pod F  │ │      │  │
+│  │  │ └─────────┘ │  │ └─────────┘ │  │ └─────────┘ │      │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘      │  │
+│  └─────────────────────────────────────────────────────────┘  │
+└───────────────────────────────────────────────────────────────┘
+</code></pre><h2 id="control-plane-components-the-brain">Control Plane Components (The Brain) </h2>
+<h3 id="1-api-server-kube-apiserver">1. <strong>API Server</strong> (<code>kube-apiserver</code>) </h3>
+<ul>
+<li><strong>What it does:</strong> The front door to your cluster</li>
+<li><strong>Analogy:</strong> Like a receptionist at a company - all requests go through them</li>
+<li><strong>Function:</strong>
+<ul>
+<li>Validates and processes all API requests</li>
+<li>Only component that talks to the database (etcd)</li>
+<li>Serves the Kubernetes REST API</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Everything goes through the API server</span>
+kubectl get pods  <span class="token comment"># → API Server → etcd</span>
+kubectl apply <span class="token parameter variable">-f</span> deployment.yaml  <span class="token comment"># → API Server → etcd</span>
+</code></pre><h3 id="2-etcd-the-database">2. <strong>etcd</strong> (The Database) </h3>
+<ul>
+<li><strong>What it does:</strong> Stores all cluster data</li>
+<li><strong>Analogy:</strong> Like the company's filing cabinet with all important documents</li>
+<li><strong>Function:</strong>
+<ul>
+<li>Key-value store for cluster state</li>
+<li>Configuration data, secrets, current state</li>
+<li>Uses Raft consensus for consistency</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Everything stored in etcd:</span>
+<span class="token punctuation">-</span> Pod definitions
+<span class="token punctuation">-</span> Service configurations  
+<span class="token punctuation">-</span> Secrets and ConfigMaps
+<span class="token punctuation">-</span> Current cluster state
+<span class="token punctuation">-</span> Resource quotas
+</code></pre><h3 id="3-scheduler-kube-scheduler">3. <strong>Scheduler</strong> (<code>kube-scheduler</code>) </h3>
+<ul>
+<li><strong>What it does:</strong> Decides which node should run each pod</li>
+<li><strong>Analogy:</strong> Like a smart dispatcher assigning tasks to workers</li>
+<li><strong>Function:</strong>
+<ul>
+<li>Considers resource requirements</li>
+<li>Node capacity and constraints</li>
+<li>Affinity/anti-affinity rules</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Scheduler considers:</span>
+<span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 500m      <span class="token comment"># Needs half a CPU</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> 1Gi    <span class="token comment"># Needs 1GB RAM</span>
+<span class="token key atrule">nodeSelector</span><span class="token punctuation">:</span>
+  <span class="token key atrule">disktype</span><span class="token punctuation">:</span> ssd    <span class="token comment"># Must run on SSD nodes</span>
+</code></pre><h3 id="4-controller-manager-kube-controller-manager">4. <strong>Controller Manager</strong> (<code>kube-controller-manager</code>) </h3>
+<ul>
+<li><strong>What it does:</strong> Runs controllers that maintain desired state</li>
+<li><strong>Analogy:</strong> Like supervisors who constantly check that work is being done correctly</li>
+<li><strong>Function:</strong>
+<ul>
+<li><strong>Deployment Controller:</strong> Manages ReplicaSets</li>
+<li><strong>ReplicaSet Controller:</strong> Ensures pod replicas</li>
+<li><strong>Node Controller:</strong> Monitors node health</li>
+<li><strong>Service Controller:</strong> Creates load balancers</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Example: Deployment controller sees:</span>
+<span class="token comment"># Desired: 3 replicas</span>
+<span class="token comment"># Current: 2 replicas (1 pod crashed)</span>
+<span class="token comment"># Action: Create 1 new pod</span>
+</code></pre><h2 id="worker-nodes-the-muscle">Worker Nodes (The Muscle) </h2>
+<h3 id="1-kubelet-node-agent">1. <strong>kubelet</strong> (Node Agent) </h3>
+<ul>
+<li><strong>What it does:</strong> Manages pods on the node</li>
+<li><strong>Analogy:</strong> Like a site manager at a construction site</li>
+<li><strong>Function:</strong>
+<ul>
+<li>Communicates with API server</li>
+<li>Starts and stops containers</li>
+<li>Reports node and pod status</li>
+<li>Runs health checks</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-kube-proxy-network-component">2. <strong>kube-proxy</strong> (Network Component) </h3>
+<ul>
+<li><strong>What it does:</strong> Handles network routing for services</li>
+<li><strong>Analogy:</strong> Like a smart router directing traffic</li>
+<li><strong>Function:</strong>
+<ul>
+<li>Implements Service networking</li>
+<li>Load balances traffic to pods</li>
+<li>Maintains network rules (iptables/IPVS)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-container-runtime-dockercontainerd">3. <strong>Container Runtime</strong> (Docker/containerd) </h3>
+<ul>
+<li><strong>What it does:</strong> Actually runs the containers</li>
+<li><strong>Analogy:</strong> Like the actual workers doing the job</li>
+<li><strong>Function:</strong>
+<ul>
+<li>Pulls container images</li>
+<li>Starts/stops containers</li>
+<li>Manages container lifecycle</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-they-work-together">How They Work Together </h2>
+<h3 id="example-deploying-an-application">Example: Deploying an Application </h3>
+<p><strong>1. You submit a deployment:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> deployment.yaml
+</code></pre><p><strong>2. API Server receives and validates the request</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>app
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span><span class="token number">1.20</span>
+</code></pre><p><strong>3. API Server stores it in etcd</strong></p>
+<p><strong>4. Deployment Controller notices the new deployment</strong></p>
+<ul>
+<li>Creates a ReplicaSet with the pod template</li>
+<li>ReplicaSet Controller sees it needs 3 pods</li>
+</ul>
+<p><strong>5. Scheduler assigns pods to nodes</strong></p>
+<ul>
+<li>Checks resource requirements</li>
+<li>Finds suitable nodes</li>
+<li>Updates pod definitions with node assignments</li>
+</ul>
+<p><strong>6. kubelet on each node sees assigned pods</strong></p>
+<ul>
+<li>Tells container runtime to pull nginx:1.20 image</li>
+<li>Starts containers</li>
+<li>Reports status back to API server</li>
+</ul>
+<p><strong>7. kube-proxy updates network rules</strong></p>
+<ul>
+<li>If there's a Service, creates load balancing rules</li>
+<li>Enables pod-to-pod communication</li>
+</ul>
+<h2 id="types-of-kubernetes-clusters">Types of Kubernetes Clusters </h2>
+<h3 id="1-single-node-cluster">1. <strong>Single-Node Cluster</strong> </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────┐
+│       Single Node       │
+│  ┌─────────────────────┐│
+│  │   Control Plane     ││  ← All components on one machine
+│  └─────────────────────┘│
+│  ┌─────────────────────┐│
+│  │     Workloads       ││  ← Your apps run here too
+│  └─────────────────────┘│
+└─────────────────────────┘
+</code></pre><p><strong>Examples:</strong> minikube, kind, Docker Desktop<br>
+<strong>Use case:</strong> Development, learning</p>
+<h3 id="2-multi-node-cluster">2. <strong>Multi-Node Cluster</strong> </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Control Plane  │    │   Worker    │    │   Worker    │
+│     Node        │    │   Node 1    │    │   Node 2    │
+│                 │    │             │    │             │
+│ ┌─────────────┐ │    │ ┌─────────┐ │    │ ┌─────────┐ │
+│ │ API Server  │ │    │ │   Pods  │ │    │ │   Pods  │ │
+│ │ Scheduler   │ │    │ │ kubelet │ │    │ │ kubelet │ │
+│ │ Controllers │ │    │ │ kube-px │ │    │ │ kube-px │ │
+│ │    etcd     │ │    │ │ runtime │ │    │ │ runtime │ │
+│ └─────────────┘ │    │ └─────────┘ │    │ └─────────┘ │
+└─────────────────┘    └─────────────┘    └─────────────┘
+</code></pre><p><strong>Use case:</strong> Production</p>
+<h3 id="3-highly-available-ha-cluster">3. <strong>Highly Available (HA) Cluster</strong> </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│    Master    │ │    Master    │ │    Master    │
+│     Node     │ │     Node     │ │     Node     │
+│      1       │ │      2       │ │      3       │
+└──────────────┘ └──────────────┘ └──────────────┘
+        │               │               │
+        └───────────────┼───────────────┘
+                        │
+        ┌───────────────┼───────────────┐
+        │               │               │
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│   Worker     │ │   Worker     │ │   Worker     │
+│   Node 1     │ │   Node 2     │ │   Node 3     │
+└──────────────┘ └──────────────┘ └──────────────┘
+</code></pre><p><strong>Use case:</strong> Production systems requiring 99.9%+ uptime</p>
+<h2 id="real-world-cluster-examples">Real-World Cluster Examples </h2>
+<h3 id="small-startup-3-node-cluster"><strong>Small Startup (3-node cluster):</strong> </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1 Control Plane Node: 2 CPU, 4GB RAM
+2 Worker Nodes: 4 CPU, 8GB RAM each
+Total: 10 CPU, 20GB RAM
+Cost: ~$200-300/month in cloud
+</code></pre><h3 id="medium-company-10-node-cluster"><strong>Medium Company (10-node cluster):</strong> </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>3 Control Plane Nodes: 4 CPU, 8GB RAM each  
+7 Worker Nodes: 8 CPU, 16GB RAM each
+Total: 68 CPU, 136GB RAM  
+Cost: ~$1500-2000/month in cloud
+</code></pre><h3 id="large-enterprise-100-node-cluster"><strong>Large Enterprise (100+ node cluster):</strong> </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>3+ Control Plane Nodes: 8+ CPU, 16+ GB RAM each
+50+ Worker Nodes: 16+ CPU, 32+ GB RAM each
+Multiple availability zones
+Auto-scaling enabled
+Cost: $10,000+ per month
+</code></pre><h2 id="cluster-networking">Cluster Networking </h2>
+<h3 id="pod-network"><strong>Pod Network:</strong> </h3>
+<ul>
+<li>Every pod gets a unique IP address</li>
+<li>Pods can communicate directly with each other</li>
+<li>No NAT between pods</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Pod A (IP: 10.244.1.10) → Pod B (IP: 10.244.2.15)
+Direct communication across nodes
+</code></pre><h3 id="service-network"><strong>Service Network:</strong> </h3>
+<ul>
+<li>Services get stable IP addresses</li>
+<li>Load balance traffic across pods</li>
+<li>Enable service discovery</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Frontend Service (IP: 10.96.0.100)
+  ↓ Load balances to:
+Frontend Pod 1 (IP: 10.244.1.10)
+Frontend Pod 2 (IP: 10.244.2.20)  
+Frontend Pod 3 (IP: 10.244.3.30)
+</code></pre><h2 id="why-use-a-cluster">Why Use a Cluster? </h2>
+<h3 id="high-availability"><strong>High Availability:</strong> </h3>
+<ul>
+<li>If one node fails, pods move to healthy nodes</li>
+<li>Multiple control plane nodes prevent single point of failure</li>
+</ul>
+<h3 id="scalability"><strong>Scalability:</strong> </h3>
+<ul>
+<li>Add more nodes to handle more applications</li>
+<li>Horizontal scaling of both infrastructure and applications</li>
+</ul>
+<h3 id="resource-efficiency"><strong>Resource Efficiency:</strong> </h3>
+<ul>
+<li>Share resources across multiple applications</li>
+<li>Better utilization than dedicated servers per app</li>
+</ul>
+<h3 id="declarative-management"><strong>Declarative Management:</strong> </h3>
+<ul>
+<li>Describe desired state, cluster maintains it</li>
+<li>Self-healing and automated operations</li>
+</ul>
+<h3 id="portability"><strong>Portability:</strong> </h3>
+<ul>
+<li>Same cluster concepts work on any cloud or on-premises</li>
+<li>Avoid vendor lock-in</li>
+</ul>
+<h2 id="simple-analogy-a-cluster-is-like-a-smart-factory">Simple Analogy: A Cluster is Like a Smart Factory </h2>
+<p><strong>Control Plane = Management Office</strong></p>
+<ul>
+<li><strong>CEO (API Server):</strong> All decisions go through them</li>
+<li><strong>HR Manager (Scheduler):</strong> Assigns workers to tasks</li>
+<li><strong>Supervisors (Controllers):</strong> Ensure work gets done correctly</li>
+<li><strong>Filing System (etcd):</strong> Keeps records of everything</li>
+</ul>
+<p><strong>Worker Nodes = Factory Floor</strong></p>
+<ul>
+<li><strong>Site Managers (kubelet):</strong> Manage their section</li>
+<li><strong>Logistics (kube-proxy):</strong> Handle material flow</li>
+<li><strong>Workers (containers):</strong> Do the actual work</li>
+</ul>
+<p><strong>The magic:</strong> You tell the management office what you want produced (deployments), and the entire factory coordinates to make it happen, automatically handling failures and scaling up/down as needed.</p>
+<p>That's a Kubernetes cluster - a distributed system that makes managing applications across multiple machines as easy as managing them on a single machine!</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
